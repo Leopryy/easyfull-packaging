@@ -14,14 +14,13 @@
         /* 自定义 Swiper 箭头颜色与位置 */
         .swiper-button-next, .swiper-button-prev {
             color: #064e3b !important; /* emerald-900 */
-            background: rgba(255, 255, 255, 0.9); /* 稍微增加一点不透明度，防背景干扰 */
+            background: rgba(255, 255, 255, 0.9);
             width: 50px;
             height: 50px;
             border-radius: 50%;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
             transition: all 0.3s;
-            
-            /* ★★★ 关键修改：把位置往上提，让它位于图片中间 ★★★ */
+            /* 箭头垂直居中于图片区域 (大约 38% 处) */
             top: 38% !important; 
             transform: translateY(-50%);
         }
@@ -41,11 +40,9 @@
         .swiper-pagination-bullet-active {
             background: #064e3b !important;
         }
-        /* 让分页器稍微离底部远一点，避免撞到文字 */
         .swiper-pagination {
             bottom: 0px !important;
         }
-        /* 给 Swiper 容器底部留点空间给分页器 */
         .productSwiper {
             padding-bottom: 50px !important; 
         }
@@ -111,7 +108,7 @@
     <section id="solutions" class="py-24 px-4 md:px-8 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-light text-emerald-950 mb-3">Our Core Solutions</h2>
+                <h2 class="text-3xl font-light text-emerald-950 mb-3">Our Product Lines</h2>
                 <div class="w-12 h-1 bg-emerald-900 mx-auto"></div>
                 <p class="text-sm text-gray-500 mt-4">Swipe to explore our full range</p>
             </div>
@@ -127,9 +124,9 @@
                                 GRS Certified
                             </div>
                         </div>
-                        <h3 class="text-xl font-medium text-emerald-950">100% Recycled LDPE</h3>
+                        <h3 class="text-xl font-medium text-emerald-950">Recycled CPE/PE Bags</h3>
                         <p class="text-sm text-gray-500 mt-2 leading-relaxed">
-                            Zero virgin plastic. GRS certified transparency. The perfect choice for eco-conscious fashion brands.
+                            Available in Virgin to 100% Recycled PE. Features smooth, clear, or premium frosted finishes. Perfect for apparel and shipping.
                         </p>
                     </div>
 
@@ -141,9 +138,9 @@
                                 Custom Print
                             </div>
                         </div>
-                        <h3 class="text-xl font-medium text-emerald-950">High-Precision Branding</h3>
+                        <h3 class="text-xl font-medium text-emerald-950">Customization & Features</h3>
                         <p class="text-sm text-gray-500 mt-2 leading-relaxed">
-                            Sharp, durable ink that won't fade. Elevate your unboxing experience with premium logo placement.
+                            High-quality logo printing. Custom sizes with options for adhesive flaps, hanger holes, and zip closures to fit your brand.
                         </p>
                     </div>
 
@@ -155,9 +152,9 @@
                                 Protective
                             </div>
                         </div>
-                        <h3 class="text-xl font-medium text-emerald-950">Protective Air Cushion</h3>
+                        <h3 class="text-xl font-medium text-emerald-950">Bubble Wrap Sheets & Bags</h3>
                         <p class="text-sm text-gray-500 mt-2 leading-relaxed">
-                            Superior shock absorption technology for fragile items. Available in rolls, sheets, or custom bags.
+                            LDPE air-filled bubbles. Available in rolls, flat sheets, or pre-cut bags. Anti-static and laminated options available.
                         </p>
                     </div>
 
@@ -171,7 +168,7 @@
                         </div>
                         <h3 class="text-xl font-medium text-emerald-950">Garment Hangers</h3>
                         <p class="text-sm text-gray-500 mt-2 leading-relaxed">
-                            Durable PP/PS/ABS hangers designed for factory transport and retail display. Custom sizes available.
+                            Durable PP, PS, or ABS materials. Features include anti-slip coatings, rotating hooks, and shoulder notches.
                         </p>
                     </div>
 
@@ -188,9 +185,9 @@
             <div>
                 <h2 class="text-3xl font-light mb-6">Let's package the future.</h2>
                 <div class="space-y-4 text-sm text-emerald-100">
-                    <p><strong class="text-white block">Contact:</strong> Daisy / Chalihua</p>
-                    <p><strong class="text-white block">Email:</strong> chalihua@sanbaihuili.net</p>
-                    <p><strong class="text-white block">Phone:</strong> +86 13375190997</p>
+                    <p><strong class="text-white block">Contact:</strong> Daisy</p>
+                    <p><strong class="text-white block">Email:</strong> chalihua@sanbaihuili.net <br> yehongjuan@sanbaihuili.net</p>
+                    <p><strong class="text-white block">Phone:</strong> +86 13375190997 <br> +0512-68283000</p>
                 </div>
             </div>
             <div class="bg-emerald-900 p-8 rounded-sm">
@@ -209,20 +206,20 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".productSwiper", {
-            slidesPerView: 1, // 手机端显示1个
-            spaceBetween: 30, // 间距
-            loop: true,       // 循环播放
+            slidesPerView: 1, // 手机端
+            spaceBetween: 30,
+            loop: true,
             autoplay: {
                 delay: 4000,
                 disableOnInteraction: false,
             },
-            // 响应式断点：屏幕越大，显示的越多
+            // 响应式断点
             breakpoints: {
                 640: {
-                    slidesPerView: 2, // 平板显示2个
+                    slidesPerView: 2, // 平板
                 },
                 1024: {
-                    slidesPerView: 3, // 电脑显示3个
+                    slidesPerView: 3, // 电脑
                 },
             },
             navigation: {
