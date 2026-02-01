@@ -5,10 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easyfull | Sustainable Packaging</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
         body { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
+
+        /* 自定义 Swiper 箭头颜色，适配 Emerald 主题 */
+        .swiper-button-next, .swiper-button-prev {
+            color: #064e3b !important; /* emerald-900 */
+            background: rgba(255, 255, 255, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background: #064e3b;
+            color: white !important;
+        }
+        .swiper-button-next::after, .swiper-button-prev::after {
+            font-size: 20px !important;
+            font-weight: bold;
+        }
+        /* 调整分页圆点颜色 */
+        .swiper-pagination-bullet-active {
+            background: #064e3b !important;
+        }
     </style>
 </head>
 <body class="text-gray-800 bg-white">
@@ -68,53 +92,132 @@
         </div>
     </section>
 
-    <section id="solutions" class="py-24 px-8 bg-white">
+    <section id="solutions" class="py-24 px-4 md:px-8 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-light text-emerald-950 mb-3">Our Core Solutions</h2>
                 <div class="w-12 h-1 bg-emerald-900 mx-auto"></div>
+                <p class="text-sm text-gray-500 mt-4">Swipe to explore our full range</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                
-                <div class="group cursor-pointer">
-                    <div class="aspect-[4/5] bg-gray-100 overflow-hidden relative rounded-sm mb-6 shadow-sm">
-                        <img src="WechatIMG10932.jpg" 
-                             class="w-full h-full object-cover object-center transform scale-150 group-hover:scale-[1.6] transition-transform duration-700 ease-out grayscale brightness-110 contrast-125">
-                        
-                        <div class="absolute top-4 left-4 bg-emerald-900 text-white text-[10px] font-bold px-3 py-1 tracking-wider uppercase">
-                            GRS Certified
+            <div class="swiper productSwiper pb-12 px-4">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide group cursor-pointer">
+                        <div class="aspect-[4/5] bg-gray-100 overflow-hidden relative rounded-sm mb-6 shadow-sm">
+                            <img src="WechatIMG10932.jpg" 
+                                 class="w-full h-full object-cover object-center transform scale-150 group-hover:scale-[1.6] transition-transform duration-700 ease-out grayscale brightness-110 contrast-125">
+                            <div class="absolute top-4 left-4 bg-emerald-900 text-white text-[10px] font-bold px-3 py-1 tracking-wider uppercase">
+                                GRS Certified
+                            </div>
                         </div>
+                        <h3 class="text-xl font-medium text-emerald-950">100% Recycled LDPE</h3>
+                        <p class="text-sm text-gray-500 mt-2 leading-relaxed">
+                            Zero virgin plastic. GRS certified transparency. The perfect choice for eco-conscious fashion brands.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-medium text-emerald-950">100% Recycled LDPE</h3>
-                    <p class="text-sm text-gray-500 mt-2 leading-relaxed">
-                        Zero virgin plastic. GRS certified transparency. The perfect choice for eco-conscious fashion brands requiring clarity and strength.
-                    </p>
-                </div>
 
-                <div class="group cursor-pointer">
-                    <div class="aspect-[4/5] bg-gray-100 overflow-hidden relative rounded-sm mb-6 shadow-sm">
-                        <img src="WechatIMG10936.jpg" 
-                             class="w-full h-full object-cover object-center transform scale-150 group-hover:scale-[1.6] transition-transform duration-700 ease-out grayscale brightness-105 contrast-150">
-                        
-                        <div class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 tracking-wider uppercase">
-                            Custom Print
+                    <div class="swiper-slide group cursor-pointer">
+                        <div class="aspect-[4/5] bg-gray-100 overflow-hidden relative rounded-sm mb-6 shadow-sm">
+                            <img src="WechatIMG10936.jpg" 
+                                 class="w-full h-full object-cover object-center transform scale-150 group-hover:scale-[1.6] transition-transform duration-700 ease-out grayscale brightness-105 contrast-150">
+                            <div class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 tracking-wider uppercase">
+                                Custom Print
+                            </div>
                         </div>
+                        <h3 class="text-xl font-medium text-emerald-950">High-Precision Branding</h3>
+                        <p class="text-sm text-gray-500 mt-2 leading-relaxed">
+                            Sharp, durable ink that won't fade. Elevate your unboxing experience with premium logo placement.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-medium text-emerald-950">High-Precision Branding</h3>
-                    <p class="text-sm text-gray-500 mt-2 leading-relaxed">
-                        Sharp, durable ink that won't fade. Elevate your unboxing experience with premium logo placement and safety warnings.
-                    </p>
-                </div>
 
-                <div class="group cursor-pointer">
-                    <div class="aspect-[4/5] bg-gray-100 overflow-hidden relative rounded-sm mb-6 shadow-sm">
-                        <img src="WechatIMG10927.jpg" 
-                             class="w-full h-full object-cover object-center transform scale-[2.0] group-hover:scale-[2.1] transition-transform duration-700 ease-out opacity-80 contrast-125 brightness-110 grayscale">
-                        
-                        <div class="absolute top-4 left-4 bg-gray-500 text-white text-[10px] font-bold px-3 py-1 tracking-wider uppercase">
-                            Protective
+                    <div class="swiper-slide group cursor-pointer">
+                        <div class="aspect-[4/5] bg-gray-100 overflow-hidden relative rounded-sm mb-6 shadow-sm">
+                            <img src="WechatIMG10927.jpg" 
+                                 class="w-full h-full object-cover object-center transform scale-[2.0] group-hover:scale-[2.1] transition-transform duration-700 ease-out opacity-80 contrast-125 brightness-110 grayscale">
+                            <div class="absolute top-4 left-4 bg-gray-500 text-white text-[10px] font-bold px-3 py-1 tracking-wider uppercase">
+                                Protective
+                            </div>
                         </div>
+                        <h3 class="text-xl font-medium text-emerald-950">Protective Air Cushion</h3>
+                        <p class="text-sm text-gray-500 mt-2 leading-relaxed">
+                            Superior shock absorption technology for fragile items. Available in rolls, sheets, or custom bags.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-medium text-emerald-950">Protective Air Cushion</h3>
-                    <p class="text-sm text-gray-500
+
+                    <div class="swiper-slide group cursor-pointer">
+                        <div class="aspect-[4/5] bg-gray-100 overflow-hidden relative rounded-sm mb-6 shadow-sm">
+                            <img src="hanger.jpg" 
+                                 class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-out grayscale brightness-105">
+                            <div class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-bold px-3 py-1 tracking-wider uppercase">
+                                Accessories
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-medium text-emerald-950">Garment Hangers</h3>
+                        <p class="text-sm text-gray-500 mt-2 leading-relaxed">
+                            Durable PP/PS/ABS hangers designed for factory transport and retail display. Custom sizes available.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-emerald-950 text-white py-20 px-8">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-light mb-6">Let's package the future.</h2>
+                <div class="space-y-4 text-sm text-emerald-100">
+                    <p><strong class="text-white block">Contact:</strong> Daisy / Chalihua</p>
+                    <p><strong class="text-white block">Email:</strong> chalihua@sanbaihuili.net</p>
+                    <p><strong class="text-white block">Phone:</strong> +86 13375190997</p>
+                </div>
+            </div>
+            <div class="bg-emerald-900 p-8 rounded-sm">
+                 <form action="https://formspree.io/f/你的ID" method="POST" class="space-y-4">
+                    <input type="email" name="email" placeholder="Email Address" class="w-full bg-emerald-950 border border-emerald-800 p-3 text-white focus:outline-none focus:border-white">
+                    <textarea name="message" placeholder="I am interested in..." rows="3" class="w-full bg-emerald-950 border border-emerald-800 p-3 text-white focus:outline-none focus:border-white"></textarea>
+                    <button class="w-full bg-white text-emerald-950 font-bold py-3 hover:bg-gray-100 transition">REQUEST QUOTE</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center text-emerald-800 text-xs mt-16">
+            © 2025 SUZHOU EASYFULL CO., LTD.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".productSwiper", {
+            slidesPerView: 1, // 手机端显示1个
+            spaceBetween: 30, // 间距
+            loop: true,       // 循环播放
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            // 响应式断点：屏幕越大，显示的越多
+            breakpoints: {
+                640: {
+                    slidesPerView: 2, // 平板显示2个
+                },
+                1024: {
+                    slidesPerView: 3, // 电脑显示3个
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>
