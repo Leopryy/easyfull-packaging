@@ -11,27 +11,43 @@
         body { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
 
-        /* 自定义 Swiper 箭头颜色，适配 Emerald 主题 */
+        /* 自定义 Swiper 箭头颜色与位置 */
         .swiper-button-next, .swiper-button-prev {
             color: #064e3b !important; /* emerald-900 */
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9); /* 稍微增加一点不透明度，防背景干扰 */
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
             transition: all 0.3s;
+            
+            /* ★★★ 关键修改：把位置往上提，让它位于图片中间 ★★★ */
+            top: 38% !important; 
+            transform: translateY(-50%);
         }
+        
         .swiper-button-next:hover, .swiper-button-prev:hover {
             background: #064e3b;
             color: white !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
         }
+        
         .swiper-button-next::after, .swiper-button-prev::after {
             font-size: 20px !important;
             font-weight: bold;
         }
+        
         /* 调整分页圆点颜色 */
         .swiper-pagination-bullet-active {
             background: #064e3b !important;
+        }
+        /* 让分页器稍微离底部远一点，避免撞到文字 */
+        .swiper-pagination {
+            bottom: 0px !important;
+        }
+        /* 给 Swiper 容器底部留点空间给分页器 */
+        .productSwiper {
+            padding-bottom: 50px !important; 
         }
     </style>
 </head>
@@ -94,13 +110,13 @@
 
     <section id="solutions" class="py-24 px-4 md:px-8 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl font-light text-emerald-950 mb-3">Our Core Solutions</h2>
                 <div class="w-12 h-1 bg-emerald-900 mx-auto"></div>
                 <p class="text-sm text-gray-500 mt-4">Swipe to explore our full range</p>
             </div>
 
-            <div class="swiper productSwiper pb-12 px-4">
+            <div class="swiper productSwiper px-4">
                 <div class="swiper-wrapper">
                     
                     <div class="swiper-slide group cursor-pointer">
