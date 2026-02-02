@@ -14,7 +14,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'], // 定义高级衬线体
+                        serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
                         emerald: {
@@ -30,17 +30,17 @@
     <style>
         html { scroll-behavior: smooth; }
         
-        /* Swiper 箭头样式优化 */
+        /* Swiper 箭头样式 */
         .swiper-button-next, .swiper-button-prev {
             color: #064e3b !important;
             background: rgba(255, 255, 255, 0.95);
-            width: 56px; /*稍微加大一点*/
+            width: 56px;
             height: 56px;
             border-radius: 50%;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             
-            /* 保持你喜欢的图片中间位置 */
+            /* 箭头位置：图片区域中间 */
             top: 40% !important; 
             transform: translateY(-50%);
         }
@@ -48,24 +48,35 @@
         .swiper-button-next:hover, .swiper-button-prev:hover {
             background: #064e3b;
             color: white !important;
-            transform: translateY(-50%) scale(1.1); /* 悬浮微放大 */
+            transform: translateY(-50%) scale(1.1);
         }
 
         .swiper-button-next::after, .swiper-button-prev::after {
             font-size: 22px !important;
         }
         
+        /* 圆点颜色 */
         .swiper-pagination-bullet-active {
             background: #064e3b !important;
         }
         
-        /* 图片的高级滤镜类 */
+        /* ★★★ 修复遮挡问题的关键 CSS ★★★ */
+        .productSwiper {
+            /* 给底部留出更多空白，专门放圆点 */
+            padding-bottom: 80px !important; 
+        }
+        .swiper-pagination {
+            /* 把圆点固定在底部的空白区域里 */
+            bottom: 20px !important; 
+        }
+
+        /* 图片滤镜 */
         .premium-filter {
             filter: grayscale(100%) contrast(1.1) brightness(1.05);
             transition: all 0.7s ease;
         }
         .group:hover .premium-filter {
-            filter: grayscale(0%) contrast(1) brightness(1); /* 鼠标悬浮恢复彩色 */
+            filter: grayscale(0%) contrast(1) brightness(1);
             transform: scale(1.05);
         }
     </style>
